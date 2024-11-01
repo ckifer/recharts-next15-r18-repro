@@ -1,0 +1,12 @@
+diff --git a/node_modules/recharts/es6/component/ResponsiveContainer.js b/node_modules/recharts/es6/component/ResponsiveContainer.js
+index 18ed331..65847d6 100644
+--- a/node_modules/recharts/es6/component/ResponsiveContainer.js
++++ b/node_modules/recharts/es6/component/ResponsiveContainer.js
+@@ -129,6 +129,7 @@ export var ResponsiveContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
+     warn(calculatedWidth > 0 || calculatedHeight > 0, "The width(%s) and height(%s) of chart should be greater than 0,\n       please check the style of container, or the props width(%s) and height(%s),\n       or add a minWidth(%s) or minHeight(%s) or use aspect(%s) to control the\n       height and width.", calculatedWidth, calculatedHeight, width, height, minWidth, minHeight, aspect);
+     var isCharts = !Array.isArray(children) && getDisplayName(children.type).endsWith('Chart');
+     return React.Children.map(children, function (child) {
++      console.log('is the child an element from react-is?', isElement(child))
+       if (isElement(child)) {
+         return /*#__PURE__*/cloneElement(child, _objectSpread({
+           width: calculatedWidth,
